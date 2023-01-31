@@ -51,5 +51,6 @@ jobs:
           cache-to: "type=gha,mode=max"
           context: "githubactions-memcached"
           outputs: "${{ env.OUTPUTS }}"
+          pull: true
           push: true
-          #tags: "ghcr.io/minzord/githubactions-memcached:latest"
+          tags: "ghcr.io/minzord/githubactions-memcached:latest"
