@@ -52,4 +52,4 @@ jobs:
           context: "githubactions-memcached"
           outputs: "${{ env.OUTPUTS }}"
           push: true
-          tags: "ghcr.io/minzord/githubactions-memcached:latest"
+          tags: "ghcr.io/minzords/githubactions-memcached:latest"
