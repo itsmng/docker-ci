@@ -52,4 +52,4 @@ jobs:
           context: "githubactions-dovecot"
           outputs: "${{ env.OUTPUTS }}"
           pull: true
-          tags: "ghcr.io/Minzords/githubactions-dovecot:latest"
+          tags: "ghcr.io/minzords/githubactions-dovecot:latest"
