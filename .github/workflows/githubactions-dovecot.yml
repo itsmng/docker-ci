@@ -23,7 +23,7 @@ jobs:
       - name: "Set variables"
         run: |
           OUTPUTS="type=image"
-          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = 'itsmng/docker-ci' ]]; then
+          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = 'Minzords/itsm-docker-ci' ]]; then
               OUTPUTS="$OUTPUTS,push=true"
           fi
           echo "OUTPUTS=$OUTPUTS" >> $GITHUB_ENV
@@ -52,4 +52,4 @@ jobs:
           context: "githubactions-dovecot"
           outputs: "${{ env.OUTPUTS }}"
           pull: true
-          tags: "ghcr.io/glpi-project/githubactions-dovecot:latest"
+          tags: "ghcr.io/Minzords/githubactions-dovecot:latest"
