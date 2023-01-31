@@ -23,7 +23,7 @@ jobs:
       - name: "Set variables"
         run: |
           OUTPUTS="type=image"
-          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = 'glpi-project/docker-images' ]]; then
+          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = 'Minzords/itsm-docker-ci' ]]; then
               OUTPUTS="$OUTPUTS,push=true"
           fi
           echo "OUTPUTS=$OUTPUTS" >> $GITHUB_ENV
@@ -46,10 +46,10 @@ jobs:
         uses: "docker/build-push-action@v3"
         with:
           build-args: |
-            BASE_IMAGE=debian:buster-slim
+            BASE_IMAGE=debian:bullseye-slim
           cache-from: "type=gha"
           cache-to: "type=gha,mode=max"
           context: "githubactions-dovecot"
           outputs: "${{ env.OUTPUTS }}"
           pull: true
-          tags: "ghcr.io/glpi-project/githubactions-dovecot:latest"
+          tags: "ghcr.io/minzords/githubactions-dovecot:latest"
