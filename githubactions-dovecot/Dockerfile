@@ -21,7 +21,7 @@ RUN \
   && apt-get update \
   \
   # Install mail server and getmail utility.
-  && apt-get install --assume-yes --no-install-recommends --quiet dovecot-imapd dovecot-pop3d getmail4 \
+  && apt-get install --assume-yes --no-install-recommends --quiet dovecot-imapd dovecot-pop3d \
   && maildirmake.dovecot /home/itsm/Maildir itsm \
   \
   # Clean sources list.
