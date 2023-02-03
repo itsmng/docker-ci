@@ -59,4 +59,4 @@ jobs:
           context: "githubactions-db"
           outputs: "${{ env.OUTPUTS }}"
           push: true
-          tags: "ghcr.io/minzords/githubactions-${{ matrix.image }}:${{ matrix.version }}"
+          tags: "ghcr.io/${{ vars.REPO_NAME }}/githubactions-${{ matrix.image }}:${{ matrix.version }}"
