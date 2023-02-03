@@ -1,6 +1,6 @@
 # ITSM-NG Docker CI Image
 
-To push your image in GitHub package, you need to set the REPO_NAME variable.
+To push your image in GitHub package, you need to set the USER_NAME and REPO_NAME variable.
 You can define the variable in this URL:
 https://github.com/***USERNAME***/***REPO_NAME***/settings/variables/actions
 

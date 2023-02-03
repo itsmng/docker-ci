@@ -23,7 +23,7 @@ jobs:
       - name: "Set variables"
         run: |
           OUTPUTS="type=image"
-          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = 'Minzords/itsm-docker-ci' ]]; then
+          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = '${{ vars.USER_NAME }}/${{ vars.REPO_NAME }}' ]]; then
               OUTPUTS="$OUTPUTS,push=true"
           fi
           echo "OUTPUTS=$OUTPUTS" >> $GITHUB_ENV
@@ -52,4 +52,4 @@ jobs:
           context: "githubactions-memcached"
           outputs: "${{ env.OUTPUTS }}"
           push: true
-          tags: "ghcr.io/${{ vars.REPO_NAME }}/githubactions-memcached:latest"
+          tags: "ghcr.io/${{ vars.USER_NAME }}/githubactions-memcached:latest"

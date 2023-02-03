@@ -29,7 +29,7 @@ jobs:
       - name: "Set variables"
         run: |
           OUTPUTS="type=image"
-          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = 'minzords/itsm-docker-ci' ]]; then
+          if [[ "${{ github.ref }}" = 'refs/heads/master' && "${{ github.repository }}" = '${{ vars.USER_NAME }}/${{ vars.REPO_NAME }}' ]]; then
               OUTPUTS="$OUTPUTS,push=true"
           fi
           echo "OUTPUTS=$OUTPUTS" >> $GITHUB_ENV
@@ -59,4 +59,4 @@ jobs:
           context: "githubactions-db"
           outputs: "${{ env.OUTPUTS }}"
           push: true
-          tags: "ghcr.io/${{ vars.REPO_NAME }}/githubactions-${{ matrix.image }}:${{ matrix.version }}"
+          tags: "ghcr.io/${{ vars.USER_NAME }}/githubactions-${{ matrix.image }}:${{ matrix.version }}"
