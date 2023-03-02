@@ -1,0 +1,20 @@
+
+[mysqld]
+# Tweak optimizer
+optimizer_switch='mrr=on'
+optimizer_switch='mrr_cost_based=off'
+
+# Mount datadir onto memory
+datadir=/dev/shm/mysql
+
+
+[mariadb]
+# Tweak cache/buffers
+join_cache_level=8
+join_buffer_size=8M
+mrr_buffer_size=8M
+
+
+[mysqld-8.0]
+# Fix "Authentication plugin 'caching_sha2_password' cannot be loaded" on MySQL 8.0
+default-authentication-plugin  = mysql_native_password
