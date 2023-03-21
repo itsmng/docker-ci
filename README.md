@@ -16,6 +16,7 @@ The next variable configurations are required :
 
 To set the configuration, go to `Settings > Secrets and variables > Actions`.
 
+
 ## Credit
 
 This repository is based on the docker image git repository of GLPI Project.
